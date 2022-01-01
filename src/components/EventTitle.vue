@@ -1,5 +1,5 @@
 <template>
-  <duv>
+  <div>
     <label for="title">タイトル</label>
     <input
       id="title"
@@ -8,7 +8,7 @@
       @input="$emit('input', $event.target.value)"
     >
     <pre>{{ value }}</pre>
-  </duv>
+  </div>
 </template>
 
 <script>

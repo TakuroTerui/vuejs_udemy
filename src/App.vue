@@ -104,7 +104,7 @@ export default {
         isPrivate: false,
         target: [],
         price: '無料',
-        location: '東京'
+        location: ['東京']
       }
     };
   },
