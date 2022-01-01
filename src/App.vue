@@ -1,33 +1,33 @@
 <template>
   <div>
     <LikeHeader>
-      <h2>みなさん</h2>
-      <template #title="slotProps">
-        <h2>こんにちは</h2>
-        <h2>{{ slotProps.user.firstName }}</h2>
-      </template>
       <h3>はじめまして</h3>
-      <p>よろしくお願いします</p>
-      <template #number>
-        <p>{{ number }}</p>
-      </template>
     </LikeHeader>
     <LikeNumber :total-number="number" @my-click="number = $event"></LikeNumber>
-    <LikeNumber :total-number="number"></LikeNumber>
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
 <script>
 import LikeHeader from './components/LikeHeader.vue'
+import About from './components/About.vue'
+import Home from './components/Home.vue'
 
 export default {
   data() {
     return {
-      number: 10
+      number: 10,
+      currentComponent: 'Home'
     };
   },
   components: {
-    LikeHeader
+    LikeHeader,
+    About,
+    Home
   }
 }
 </script>
