@@ -13,8 +13,26 @@
       exact
       class="link"
     >Users</router-link>
+    <button @click="increment(2)">+1</button>
+    <button @click="decrement(2)">-1</button>
   </nav>
 </template>
+
+<script>
+import {mapMutations} from 'vuex';
+import {mapActions} from 'vuex';
+export default {
+  methods: {
+    ...mapMutations(['increment', 'decrement']),
+    ...mapActions(['increment', 'decrement']),
+
+    // 非同期処理
+    // increment() {
+    //   this.$store.dispatch('increment', 2);
+    // }
+  }
+};
+</script>
 
 <style scoped>
   .link {
