@@ -23,8 +23,8 @@ import {mapMutations} from 'vuex';
 import {mapActions} from 'vuex';
 export default {
   methods: {
-    ...mapMutations(['increment', 'decrement']),
-    ...mapActions(['increment', 'decrement']),
+    ...mapMutations('count', ['increment', 'decrement']),
+    ...mapActions('count', ['increment', 'decrement']),
 
     // 非同期処理
     // increment() {

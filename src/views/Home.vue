@@ -16,7 +16,7 @@
 import {mapGetters} from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['doubleCount', 'tripleCount']),
+    ...mapGetters('count', ['doubleCount', 'tripleCount']),
     // 双方向バインディングでv-model未使用パターン
     // message() {
     //   return this.$store.getters.message
